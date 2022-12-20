@@ -8,7 +8,7 @@ use app\models\Images;
 ?>
 <div class="row">
     <div class="col-md-12">
-        <a href="<?= \yii\helpers\Url::to(['loading']) ?>" class="btn btn-primary mb-3">Загрузить фото</a>
+        <a href="<?= \yii\helpers\Url::to(['image/loading']) ?>" class="btn btn-primary mb-3">Загрузить фото</a>
     </div>
 </div>
 <div class="row">
