@@ -14,29 +14,10 @@ class GalleryController extends Controller
 {
     public function actionIndex()
     {
-        $query = Images::find();
+        $images = Images::find()->all();
 
-        if (\Yii::$app->request->get('sort')) {
-            $sort = \Yii::$app->request->get('sort');
-            if ($sort != 1) {
-                if ($sort == 'name-asc') {
-                    $query->orderBy(['title' => SORT_ASC]);
-                }
-                if ($sort == 'name-desc') {
-                    $query->orderBy(['title' => SORT_DESC]);
-                }
-                if ($sort == 'date-asc') {
-                    $query->orderBy(['created_at' => SORT_ASC]);
-                }
-                if ($sort == 'date-desc') {
-                    $query->orderBy(['created_at' => SORT_DESC]);
-                }
-            }
-            $images = $query->all();
-            return $this->renderPartial('_gallery', ['images' => $images]);
-        }
-            $images = $query->all();
-            return $this->render('index', ['images' => $images,]);
+
+        return $this->render('index', ['images' => $images,]);
 
     }
 
