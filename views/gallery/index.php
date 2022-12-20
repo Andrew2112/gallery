@@ -21,10 +21,10 @@ use app\models\Images;
                 <div class="col-md-3">
                     <select class="form-control" id="selectForSort">
                         <option value="1">----</option>
-                        <option value="name-asc" class="asc">по названию &#129045;</option>
-                        <option value="name-desc" class="desc">по названию &#8595;</option>
-                        <option value="date-asc" class="asc">по дате загрузки &#129045;</option>
-                        <option value="date-desc" class="desc">по дате загрузки &#8595;</option>
+                        <option value="name-asc" class="asc" <?= (Yii::$app->request->get('sort')=="name-asc") ? 'selected' : ''?>>по названию &#129045;</option>
+                        <option value="name-desc" class="desc"  <?= (Yii::$app->request->get('sort')=="name-desc") ? 'selected' : ''?>>по названию &#8595;</option>
+                        <option value="date-asc" class="asc"  <?= (Yii::$app->request->get('sort')=="date-asc") ? 'selected' : ''?>>по дате загрузки &#129045;</option>
+                        <option value="date-desc" class="desc"  <?= (Yii::$app->request->get('sort')=="date-desc") ? 'selected' : ''?>>по дате загрузки &#8595;</option>
 
                     </select>
                 </div>
