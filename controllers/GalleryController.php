@@ -12,10 +12,10 @@ class GalleryController extends Controller
 {
     public function actionIndex()
     {
-        $formatLimit = 3;
+
 
         $query = Images::find();
-        $pages = new Pagination(['totalCount' => Images::find()->count(), 'pageSize' => $formatLimit]);
+        $pages = new Pagination(['totalCount' => Images::find()->count(), 'pageSize' => Images::LIMIT_PHOTO]);
 
 
         $query = $query->offset($pages->offset)

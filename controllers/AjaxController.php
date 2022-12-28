@@ -15,9 +15,9 @@ class AjaxController extends Controller
     public function actionSortGallery()
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $formatLimit = 3;
+
         $query = Images::find();
-        $pages = new Pagination(['totalCount' => Images::find()->count(), 'pageSize' => $formatLimit]);
+        $pages = new Pagination(['totalCount' => Images::find()->count(), 'pageSize' => Images::LIMIT_PHOTO]);
 
 
         if (\Yii::$app->request->get('sort') && !\Yii::$app->request->get('page')) {
@@ -42,7 +42,7 @@ class AjaxController extends Controller
                SiteHelper::sort($sort, $query);
 
             }
-            $query = $query->offset($formatLimit + $pages->offset)
+            $query = $query->offset(Images::LIMIT_PHOTO + $pages->offset)
                 ->limit($pages->limit);
 
             $images = $query->all();

@@ -21,6 +21,7 @@ use yii\imagine\Image;
 class Images extends \yii\db\ActiveRecord
 {
     public $file = [];
+    const LIMIT_PHOTO=6;
 
     /**
      * {@inheritdoc}
