@@ -4,7 +4,7 @@
  */
 
 use app\models\Images;
-
+$this->title='Gallery'
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -39,6 +39,8 @@ use app\models\Images;
             <?= $this->render('_gallery', ['images' => $images]) ?>
         </div>
     </div>
+    <?php $page=1;?>
+    <a href="/gallery/index/?page=<?=$page?>" class="btn btn-border-activities js-image-more" data-page="<?=$page?>" data-sort="">Показать еще</a>
 <?php endif; ?>
 
 

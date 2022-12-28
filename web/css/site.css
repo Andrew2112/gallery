@@ -127,3 +127,16 @@ a.desc:after {
     }
 }
 
+.js-image-more{
+    display: block;
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    width: 14%;
+}
+
+.js-image-more:hover{
+    background: #ccc;
+    color: #0a73bb;
+}
+

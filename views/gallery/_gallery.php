@@ -12,7 +12,7 @@ use app\models\Images;
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="<?= $image->getPathThumb().$image->title ?>" alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text"><?= $image->title ?></p>
+                    <p class="card-text"><?= $image->title ?> | <?= $image->id?></p>
                     <p class="card-text"><?= $image->created_at ?></p>
                 </div>
             </div>
